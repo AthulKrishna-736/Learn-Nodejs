@@ -59,4 +59,97 @@ obj2.name = 'amal'
 let obj3 = JSON.parse(JSON.stringify(obj1));
 obj3.address.city = 'palakkad'
 
-console.log(obj3, obj1)
+// console.log(obj3, obj1)
+
+
+function a(cb, val){
+    return cb(val)
+}
+
+function cb(value){
+    console.log(value)
+}
+
+// a(cb, 7)
+
+
+const userMap = new Map()
+userMap.set("id", 1)
+userMap.set('name', 'athul')
+userMap.set('email', 'athul@example.com')
+
+// console.log(userMap.get('name'))
+// console.log(userMap.get('email'))
+
+const uniqueNumbers = new Set()
+uniqueNumbers.add(10)
+uniqueNumbers.add(20)
+uniqueNumbers.add(10)
+// console.log(uniqueNumbers.has(10))
+// console.log(uniqueNumbers.size)
+
+let user = { name: 'athul' }
+let weakMap = new WeakMap()
+weakMap.set(user, 'Logger in')
+// console.log(weakMap.get(user))
+
+user = null
+
+// console.log(weakMap.get(user))
+
+
+let user1 = { name: 'hatihbaul' }
+let weakSet = new WeakSet()
+weakSet.add(user1)
+
+// console.log(weakSet.has(user1))
+
+user1 = null
+// console.log(weakSet.has(user1))
+
+
+let arr = ['smith', 'john', 'alen', 'kenny', 'louis']
+
+let [first, ,second] = arr
+
+// console.log(first, second)
+
+let guest = 'Jane';
+let admin = 'Pete';
+
+[guest, admin] = [admin, guest];
+
+// console.log(guest, admin); 
+
+let obj4 = {
+    name1:'athul',
+    age1: 30,
+}
+
+let { name1, age1 } = obj4
+// console.log(name1, age1)
+
+
+let [val1, ...rest] = arr
+// console.log(val1, rest)
+
+let date = new Date()
+// console.log(date)
+
+let jan1 = new Date(0)
+// console.log(jan1)
+let jan2 = new Date(24 * 3600 * 1000);
+// console.log(jan2)
+
+let today = new Date()
+
+today.setDate(today.getDate() - 14)
+
+console.log(today)
+
+
+let date1 = new Date()
+
+date1 = new Date(date1 - 14*24*60*60*1000)
+
+console.log(date1.toDateString())
