@@ -137,9 +137,9 @@ let date = new Date()
 // console.log(date)
 
 let jan1 = new Date(0)
-// console.log(jan1)
+console.log(jan1)
 let jan2 = new Date(24 * 3600 * 1000);
-// console.log(jan2)
+console.log(jan2)
 
 let today = new Date()
 
@@ -153,3 +153,38 @@ let date1 = new Date()
 date1 = new Date(date1 - 14*24*60*60*1000)
 
 console.log(date1.toDateString())
+
+// console.log(typeof NaN)
+// console.log(NaN == NaN)
+
+
+let dob = new Date(Date.UTC(2003, 0, 1, 0, 0, 0, 0));
+console.log(dob.toISOString()); // Correct: "2003-01-01T00:00:00.000Z"
+console.log(dob.getTime()); // Correct Unix timestamp
+
+
+
+function getSecondsFromDate(dateString) {
+    const specifiedDate = new Date(dateString); // Convert input to Date object
+    const currentDate = new Date(); // Get current date and time
+
+    if (isNaN(specifiedDate.getTime())) {
+        console.error("Invalid date format. Please provide a valid date string.");
+        return;
+    }
+
+    const millisecondsElapsed = currentDate - specifiedDate; // Difference in milliseconds
+    const secondsElapsed = Math.floor(millisecondsElapsed / 1000); // Convert to seconds
+
+    console.log(`Seconds elapsed from ${dateString} to now: ${secondsElapsed}`);
+}
+
+// getSecondsFromDate("2003-01-01T00:00:00Z");
+
+
+
+
+
+
+
+

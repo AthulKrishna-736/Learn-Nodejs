@@ -108,10 +108,10 @@ function* numberGenerator() {
 
 const generator = numberGenerator();
 
-console.log(generator.next()); // { value: 1, done: false }
-console.log(generator.next()); // { value: 2, done: false }
-console.log(generator.next()); // { value: 3, done: false }
-console.log(generator.next()); // { value: undefined, done: true }
+// console.log(generator.next()); // { value: 1, done: false }
+// console.log(generator.next()); // { value: 2, done: false }
+// console.log(generator.next()); // { value: 3, done: false }
+// console.log(generator.next()); // { value: undefined, done: true }
 
 
 
@@ -136,8 +136,54 @@ const myPromise = new Promise((resolve, reject) => {
     }, 1000);
 });
 
-myPromise.then((message) => {
-    console.log(message); // Outputs: Promise resolved!
-}).catch((error) => {
-    console.error(error);
-});
+// myPromise.then((message) => {
+//     console.log(message); // Outputs: Promise resolved!
+// }).catch((error) => {
+//     console.error(error);
+// });
+
+function greet1(name) {
+    console.log(`Hello ${name}! My name is ${this.name}`)
+}
+
+let person = {
+    name: 'John'
+}
+
+greet1.call(person, "alice")
+
+function addition1 (a,b){
+    return a + b
+}
+
+let number = [1,2]
+
+console.log(addition1.apply(null, number))
+
+
+let person1 = {
+    fullName: function () {
+        return this.firstName+ " " + this.lastName;
+    }
+}
+
+let users = {
+    firstName: 'athul',
+    lastName: 'krishna',
+}
+
+console.log(users)
+const userfullName = person1.fullName.bind(users)
+console.log(users)
+userfullName()
+
+
+
+
+
+
+
+
+
+
+
