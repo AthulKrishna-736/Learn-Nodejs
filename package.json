@@ -11,5 +11,8 @@
   "description": "",
   "dependencies": {
     "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "express": "^4.21.2"
   }
 }
